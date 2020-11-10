@@ -25,16 +25,25 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    //方式1
     /*implementation dependencies_impl.appcompat
     implementation dependencies_impl.constraintlayout
     testImplementation dependencies_impl.junit
     androidTestImplementation dependencies_impl.test
     androidTestImplementation dependencies_impl.espresso*/
 
+    //方式2
+    //可以将添加依赖方式相同放在一个数组中，通过引入数组，即引入多个依赖
+    //这里通过implementation引入依赖的放入publicImplementation数组中
+    //通过androidTestImplementation引入依赖的放入testImplementation数组中
+    implementation app_impl.publicImplementation
+    testImplementation dependencies_impl.junit
+    androidTestImplementation app_impl.testImplementation
 
+    //方式3
     //dependencies里面的依赖引入方式，好比Map的形式，有key, value，循环遍历引入依赖
-    dependencies_impl.each {k, v -> implementation v}
+    //最简写法
+//    dependencies_impl.each {k, v -> implementation v}
 
     //标准写法
     //implementation group: 'com.android.support', name: 'appcompat-v7', version: '28.0.0'

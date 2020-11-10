@@ -37,4 +37,15 @@ ext{
             test: 'androidx.test.ext:junit:1.1.2',
             espresso: 'androidx.test.espresso:espresso-core:3.3.0'
     ]
+
+    app_impl = [
+            publicImplementation :[
+                    'androidx.appcompat:appcompat:1.2.0',
+                    'androidx.constraintlayout:constraintlayout:2.0.4'
+            ],
+            testImplementation :[
+                    'androidx.test.ext:junit:1.1.2',
+                    'androidx.test.espresso:espresso-core:3.3.0'
+            ]
+    ]
 }
