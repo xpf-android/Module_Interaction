@@ -1,0 +1,5 @@
+rootProject.name='Module_Interaction'
+include ':app'
+include ':common'
+include ':order'
+include ':personal'
